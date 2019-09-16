@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react"
 
-export default function useScrollTop(target = window && window.document) {
+export default function useScrollTop() {
   const [value, set] = useState(0)
 
   useEffect(() => {
+    const target = window.document
+
     set(target.scrollingElement.scrollTop)
 
     const onScroll = (e) => {

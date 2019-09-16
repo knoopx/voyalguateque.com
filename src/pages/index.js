@@ -1,5 +1,4 @@
 import React from "react"
-import md from "@mapbox/babel-plugin-transform-jsxtreme-markdown/md"
 
 import Header from "../components/Header"
 import Map from "../components/Map"
