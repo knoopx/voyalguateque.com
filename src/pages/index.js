@@ -49,7 +49,7 @@ const Page = ({ data }) => (
       </div>
     </Header>
 
-    <div className="container">
+    <div className="lg:pt-32 container">
       <div className="flex flex-col items-center justify-center min-h-screen">
         <div className="mb-8">
           <img src={require("../../src/images/corona.png")} />
