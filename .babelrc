@@ -1,0 +1,13 @@
+{
+  "plugins": ["@mapbox/babel-plugin-transform-jsxtreme-markdown"],
+  "presets": [
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": [">0.25%", "not dead"]
+        }
+      }
+    ]
+  ]
+}
