@@ -75,9 +75,8 @@ const Page = ({ data }) => (
             y Juancho reservaron, o si vendrás en tu propio coche.
           </p>
         </div>
+        <Divider flip />
       </div>
-
-      <Divider flip />
 
       <div id="location" className="min-h-screen">
         <Heading>Localización</Heading>
@@ -119,9 +118,8 @@ const Page = ({ data }) => (
             />
           </div>
         </div>
+        <Divider />
       </div>
-
-      <Divider />
 
       <div id="transport" className="min-h-screen">
         <Heading>Transporte</Heading>
@@ -143,9 +141,8 @@ const Page = ({ data }) => (
             />
           </div>
         </div>
+        <Divider flip />
       </div>
-
-      <Divider flip />
 
       <div id="accomodation" className="min-h-screen">
         <Heading>Alojamientos</Heading>
@@ -204,9 +201,8 @@ const Page = ({ data }) => (
             </Accomodation>
           </div>
         </div>
+        <Divider />
       </div>
-
-      <Divider />
 
       <div id="gifts" className="min-h-screen">
         <Heading>Regalo de boda</Heading>
