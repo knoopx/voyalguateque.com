@@ -8,17 +8,14 @@ const NavItem = (props) => (
   <AnchorLink className="px-5 py-5 font-serif" {...props} />
 )
 const Heading = (props) => (
-  <h1 className="z-50 mb-16 text-3xl font-bold font-serif" {...props} />
+  <h1 className="z-10 mb-16 text-3xl font-bold font-serif" {...props} />
 )
 
 const Accomodation = ({ title, distance, url, children }) => {
   return (
     <a href={url} rel="nofollow" className="flex flex-col lg:w-1/2 p-4">
-      <h2 className="z-50 text-lg font-medium">{title}</h2>
-      <h5 className="z-50 mb-8 text-gray-600">(a {distance})</h5>
-      {/* <a className="text-sm underline" href={url}>
-        {url}
-      </a> */}
+      <h2 className="z-10 text-lg font-medium">{title}</h2>
+      <h5 className="z-10 mb-8 text-gray-600">(a {distance})</h5>
       <div className="z-0">{children}</div>
     </a>
   )
@@ -42,14 +39,19 @@ const Page = ({ data }) => (
     <Header className="hidden lg:block">
       <div className="flex items-center justify-center">
         <NavItem href="#location">Localización</NavItem>
-        <NavItem href="#accomodation">Alojamientos</NavItem>
-        <img className="mt-1 mx-5" src={require("../../src/images/logo.png")} />
         <NavItem href="#transport">Transporte</NavItem>
+        <AnchorLink href="#main">
+          <img
+            className="mt-1 mx-5"
+            src={require("../../src/images/logo.png")}
+          />
+        </AnchorLink>
+        <NavItem href="#accomodation">Alojamientos</NavItem>
         <NavItem href="#gifts">Regalo de boda</NavItem>
       </div>
     </Header>
 
-    <div className="lg:pt-32 container">
+    <div id="main" className="lg:pt-32 container">
       <div className="flex flex-col items-center justify-center min-h-screen">
         <div className="mb-8">
           <img src={require("../../src/images/corona.png")} />
@@ -93,17 +95,17 @@ const Page = ({ data }) => (
             </dl>
 
             <div>
-              <Map
+              {/* <Map
                 containerElement={
                   <div
-                    className="relative mb-8"
-                    style={{ paddingTop: "75%" }}
+                className="relative mb-8"
+                style={{ paddingTop: "75%" }}
                   />
                 }
                 loadingElement={<div style={{ height: `100%` }} />}
                 mapElement={<div className="absolute inset-0" />}
                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAO2fsSmo_oOJMjDRGxo2C2BMiv9EnhAoQ"
-              />
+              /> */}
               <img
                 className="hidden lg:block -ml-12 -mt-12"
                 src={require("../images/flor google maps.png")}
@@ -204,7 +206,7 @@ const Page = ({ data }) => (
         </div>
       </div>
 
-      <Divider flip />
+      <Divider />
 
       <div id="gifts" className="min-h-screen">
         <Heading>Regalo de boda</Heading>
