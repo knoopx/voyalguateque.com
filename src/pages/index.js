@@ -73,7 +73,7 @@ const Page = ({ data }) => {
       </Drawer>
       <Header>
         <div className="flex items-center">
-          <a onClick={toggleMenu} className="cursor-pointer mr-auto">
+          <a onClick={toggleMenu} className="cursor-pointer lg:hidden mr-auto">
             <MenuIcon size="2em" />
           </a>
           <div className="flex flex-auto items-center justify-center">
@@ -248,7 +248,7 @@ const Page = ({ data }) => {
           <Heading>Regalo de boda</Heading>
 
           <div className="flex flex-wrap lg:flex-no-wrap">
-            <p className="order-2 lg:order-1 lg:w-2/3">
+            <p className="order-2 lg:order-1 lg:w-2/4">
               Flavia y Juancho tienen la mayor parte de sus necesidades
               satisfechas, por lo cual no necesitan ningún tipo de bienes
               materiales. Además, están completamente aterrados ante la
@@ -259,9 +259,10 @@ const Page = ({ data }) => {
               es necesario, pues tu presencia ya les sirve como regalo), puedes
               ayudarles con su viaje de novios:
             </p>
-            <div className="z-0 order-1 h-32 w-auto lg:h-auto -mt-32 mb-8 ml-auto">
-              <img src={require("../images/flors regalo de boda.png")} />
-            </div>
+            <img
+              className="z-0 flex order-1 h-32 lg:h-auto lg:w-2/4 -mt-32 mb-8 ml-auto"
+              src={require("../images/flors regalo de boda.png")}
+            />
           </div>
 
           <p className="font-medium">
