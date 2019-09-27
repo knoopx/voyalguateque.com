@@ -53,7 +53,7 @@ const Page = ({ data }) => {
     <div className="text-gray-800">
       <Drawer
         isOpen={isMenuVisible}
-        className="flex flex-col items-center justify-center bg-white"
+        className="flex flex-col items-center pt-24 bg-white"
       >
         <MenuItem onClick={toggleMenu} href="#location">
           Localización
@@ -67,6 +67,9 @@ const Page = ({ data }) => {
         <MenuItem onClick={toggleMenu} href="#gifts">
           Regalo de boda
         </MenuItem>
+        <div className="p-8">
+          <img src={require("../../src/images/corona2.png")} />
+        </div>
       </Drawer>
       <Header>
         <div className="flex items-center">
@@ -77,7 +80,10 @@ const Page = ({ data }) => {
             <NavItem href="#location">Localización</NavItem>
             <NavItem href="#transport">Transporte</NavItem>
             <AnchorLink href="#main" className="mt-1 mx-5 py-2">
-              <img src={require("../../src/images/logo.png")} />
+              <img
+                className="h-10"
+                src={require("../../src/images/logo.png")}
+              />
             </AnchorLink>
             <NavItem href="#accomodation">Alojamientos</NavItem>
             <NavItem href="#gifts">Regalo de boda</NavItem>
@@ -85,7 +91,7 @@ const Page = ({ data }) => {
         </div>
       </Header>
 
-      <div id="main" className="lg:pt-24 container">
+      <div id="main" className="pt-24 container">
         <div className="flex flex-col items-center justify-center min-h-screen">
           <div className="mb-8">
             <img src={require("../../src/images/corona.png")} />
@@ -128,17 +134,17 @@ const Page = ({ data }) => {
               </dl>
 
               <div>
-                {/* <Map
-                containerElement={
-                  <div
-                className="relative mb-8"
-                style={{ paddingTop: "75%" }}
-                  />
-                }
-                loadingElement={<div style={{ height: `100%` }} />}
-                mapElement={<div className="absolute inset-0" />}
-                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAO2fsSmo_oOJMjDRGxo2C2BMiv9EnhAoQ"
-              /> */}
+                <Map
+                  containerElement={
+                    <div
+                      className="relative mb-8"
+                      style={{ paddingTop: "75%" }}
+                    />
+                  }
+                  loadingElement={<div style={{ height: `100%` }} />}
+                  mapElement={<div className="absolute inset-0" />}
+                  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAO2fsSmo_oOJMjDRGxo2C2BMiv9EnhAoQ"
+                />
                 <img
                   className="hidden lg:block -ml-12 -mt-12"
                   src={require("../images/flor google maps.png")}
@@ -207,7 +213,7 @@ const Page = ({ data }) => {
                 url="https://www.booking.com/hotel/es/hostal-l-39-esquella.es.html"
               >
                 <img
-                  className="pointer-events-none -mt-32"
+                  className="pointer-events-none -mt-10"
                   src={require("../images/hostal l'esquella.png")}
                 />
               </Accomodation>
@@ -253,10 +259,9 @@ const Page = ({ data }) => {
               es necesario, pues tu presencia ya les sirve como regalo), puedes
               ayudarles con su viaje de novios:
             </p>
-            <img
-              className="z-0 order-1 h-32 lg:h-auto -mt-32 mb-8 ml-auto"
-              src={require("../images/flors regalo de boda.png")}
-            />
+            <div className="z-0 order-1 h-32 w-auto lg:h-auto -mt-32 mb-8 ml-auto">
+              <img src={require("../images/flors regalo de boda.png")} />
+            </div>
           </div>
 
           <p className="font-medium">
