@@ -1,5 +1,7 @@
 import React from "react"
+import { MdMenu, MdClose } from "react-icons/md"
 
+import Drawer from "../components/Drawer"
 import Header from "../components/Header"
 import Map from "../components/Map"
 import AnchorLink from "../components/AnchorLink"
@@ -7,6 +9,11 @@ import AnchorLink from "../components/AnchorLink"
 const NavItem = (props) => (
   <AnchorLink className="hidden lg:block px-5 py-5 font-serif" {...props} />
 )
+
+const MenuItem = (props) => {
+  return <AnchorLink className="flex px-8 py-4 border-b" {...props} />
+}
+
 const Heading = (props) => (
   <h1 className="z-10 mb-16 text-3xl font-bold font-serif" {...props} />
 )
@@ -39,17 +46,32 @@ const Page = ({ data }) => {
   const toggleMenu = () => {
     setMenuVisible(!isMenuVisible)
   }
+
+  const MenuIcon = isMenuVisible ? MdClose : MdMenu
+
   return (
     <div className="text-gray-800">
-      <Drawer>
-        <div className="flex flex-col items-centre justify-center">
-          <a href="XXX" />
-        </div>
+      <Drawer
+        isOpen={isMenuVisible}
+        className="flex flex-col items-center justify-center bg-white"
+      >
+        <MenuItem onClick={toggleMenu} href="#location">
+          Localización
+        </MenuItem>
+        <MenuItem onClick={toggleMenu} href="#transport">
+          Transporte
+        </MenuItem>
+        <MenuItem onClick={toggleMenu} href="#accomodation">
+          Alojamientos
+        </MenuItem>
+        <MenuItem onClick={toggleMenu} href="#gifts">
+          Regalo de boda
+        </MenuItem>
       </Drawer>
       <Header>
         <div className="flex items-center">
-          <a onClick={toggleMenu} className="mr-auto">
-            X
+          <a onClick={toggleMenu} className="cursor-pointer mr-auto">
+            <MenuIcon size="2em" />
           </a>
           <div className="flex flex-auto items-center justify-center">
             <NavItem href="#location">Localización</NavItem>

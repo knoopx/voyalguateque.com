@@ -18,5 +18,10 @@
     "react-google-maps": "^9.4.5",
     "surge": "^0.21.3",
     "tailwindcss": "^1.1.2"
+  },
+  "devDependencies": {
+    "classnames": "^2.2.6",
+    "react-icons": "^3.7.0",
+    "react-spring": "^8.0.27"
   }
 }

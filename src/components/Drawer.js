@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { MdClose } from "react-icons/md"
+import classNames from "classnames"
 import { animated, useSpring } from "react-spring"
 
 import Backdrop from "./Backdrop"
@@ -21,24 +21,16 @@ const Drawer = ({
 
   return (
     <>
-      <Backdrop onClick={onClose} isOpen={isOpen} style={backdropSpring}>
-        <a
-          className="cursor-pointer absolute right-0 top-0 flex flex-col items-center m-8 text-white close"
-          onClick={onClose}
-        >
-          <MdClose size={38} />
-          <div className="mt-2 text-lg font-bold">ESC</div>
-        </a>
-      </Backdrop>
+      <Backdrop onClick={onClose} isOpen={isOpen} style={backdropSpring} />
       <animated.div
-        className={[
+        className={classNames(
           "fixed z-40 h-full w-screen sm:w-drawer",
           {
             "left-0": position === "left",
             "right-0": position === "right",
           },
           className,
-        ]}
+        )}
         style={drawerSpring}
         {...props}
       >

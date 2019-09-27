@@ -25,7 +25,7 @@ const Header = ({ className, children }) => {
   return (
     <div
       ref={ref}
-      className={`fixed left-0 right-0 top-0 z-100 shadow bg-white ${className}`}
+      className={`fixed left-0 right-0 top-0 z-50 shadow bg-white ${className}`}
     >
       <div className="mx-auto container">{children}</div>
     </div>
