@@ -1,5 +1,5 @@
 import React from "react"
-import { MdMenu, MdClose } from "react-icons/md"
+import { MdMenu, MdClose, MdChevronRight } from "react-icons/md"
 
 import Drawer from "../components/Drawer"
 import Header from "../components/Header"
@@ -21,7 +21,9 @@ const Heading = (props) => (
 const Accomodation = ({ title, distance, url, children }) => {
   return (
     <a href={url} rel="nofollow" className="flex flex-col lg:w-1/2 p-4">
-      <h2 className="z-10 text-lg font-medium">{title}</h2>
+      <h2 className="z-10 text-lg font-medium">
+        {title} <MdChevronRight className="inline-block" size="1.6em" />
+      </h2>
       <h5 className="z-10 mb-8 text-gray-600">(a {distance})</h5>
       <div className="z-0">{children}</div>
     </a>
