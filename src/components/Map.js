@@ -5,17 +5,32 @@ import {
   GoogleMap,
   Marker,
 } from "react-google-maps"
+import classNames from "classnames"
 
-const Map = ({ lat, lng }) => {
+const Map = withScriptjs(
+  withGoogleMap(({ ...props }) => {
+    return <GoogleMap {...props} />
+  }),
+)
+
+const MapWrapper = ({ lat, lng, className, ...props }) => {
   return (
-    <GoogleMap defaultZoom={10} defaultCenter={{ lat, lng }}>
+    <Map
+      defaultCenter={{ lat, lng }}
+      defaultZoom={10}
+      containerElement={
+        <div
+          className={classNames("relative", className)}
+          style={{ paddingTop: "75%" }}
+          {...props}
+        />
+      }
+      loadingElement={<div style={{ height: `100%` }} />}
+      mapElement={<div className="absolute inset-0" />}
+      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAO2fsSmo_oOJMjDRGxo2C2BMiv9EnhAoQ"
+    >
       <Marker position={{ lat, lng }} />
-    </GoogleMap>
+    </Map>
   )
 }
-
-Map.defaultProps = {
-  lat: 41.7402,
-  lng: 2.2686123,
-}
-export default withScriptjs(withGoogleMap(Map))
+export default MapWrapper

@@ -11,11 +11,11 @@ const NavItem = (props) => (
 )
 
 const MenuItem = (props) => {
-  return <AnchorLink className="flex px-8 py-4 border-b" {...props} />
+  return <AnchorLink className="px-8 py-4 border-b text-center" {...props} />
 }
 
 const Heading = (props) => (
-  <h1 className="z-10 mb-16 text-3xl font-bold font-serif" {...props} />
+  <h1 className="z-10 mb-10 text-3xl font-bold font-serif" {...props} />
 )
 
 const Accomodation = ({ title, distance, url, children }) => {
@@ -31,7 +31,7 @@ const Accomodation = ({ title, distance, url, children }) => {
 const Divider = ({ flip = false }) => {
   return (
     <img
-      className="block mx-auto my-24"
+      className="block mx-auto my-16"
       src={
         flip
           ? require("../images/fulleta esquerra.png")
@@ -50,11 +50,8 @@ const Page = ({ data }) => {
   const MenuIcon = isMenuVisible ? MdClose : MdMenu
 
   return (
-    <div className="text-gray-800">
-      <Drawer
-        isOpen={isMenuVisible}
-        className="flex flex-col items-center pt-24 bg-white"
-      >
+    <div className="overflow-y-hidden text-gray-800">
+      <Drawer isOpen={isMenuVisible} className="flex flex-col pt-24 bg-white">
         <MenuItem onClick={toggleMenu} href="#location">
           Localización
         </MenuItem>
@@ -73,10 +70,13 @@ const Page = ({ data }) => {
       </Drawer>
       <Header>
         <div className="flex items-center">
-          <a onClick={toggleMenu} className="cursor-pointer lg:hidden mr-auto">
+          <a
+            onClick={toggleMenu}
+            className="cursor-pointer z-10 lg:hidden mr-auto"
+          >
             <MenuIcon size="2em" />
           </a>
-          <div className="flex flex-auto items-center justify-center">
+          <div className="flex flex-auto items-center justify-center -ml-8 md:ml-0">
             <NavItem href="#location">Localización</NavItem>
             <NavItem href="#transport">Transporte</NavItem>
             <AnchorLink href="#main" className="mt-1 mx-5 py-2">
@@ -132,29 +132,16 @@ const Page = ({ data }) => {
                 <dt>Hora:</dt>
                 <dd>18h</dd>
               </dl>
-
-              <div>
-                <Map
-                  containerElement={
-                    <div
-                      className="relative mb-8"
-                      style={{ paddingTop: "75%" }}
-                    />
-                  }
-                  loadingElement={<div style={{ height: `100%` }} />}
-                  mapElement={<div className="absolute inset-0" />}
-                  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAO2fsSmo_oOJMjDRGxo2C2BMiv9EnhAoQ"
-                />
-                <img
-                  className="hidden lg:block -ml-12 -mt-12"
-                  src={require("../images/flor google maps.png")}
-                />
-              </div>
             </div>
-            <div>
+            <div className="md:w-1/2 -mt-16 mb-8 lg:-mt-32 md:-mr-24">
+              <img src={require("../images/fotos localizacion.png")} />
+            </div>
+
+            <div className="md:w-1/2 md:-mt-48">
+              <Map className="relative md:mb-8" lat={41.7402} lng={2.2686123} />
               <img
-                className="lg:-mt-32"
-                src={require("../images/fotos localizacion.png")}
+                className="w-2/3 -mt-10 ml-auto md:-ml-16 md:-mt-16"
+                src={require("../images/flor google maps.png")}
               />
             </div>
           </div>
@@ -164,7 +151,7 @@ const Page = ({ data }) => {
         <div id="transport" className="min-h-screen">
           <Heading>Transporte</Heading>
           <div className="flex flex-wrap">
-            <div className="md:w-1/2 mb-8 pr-16">
+            <div className="mb-8 md:pr-16">
               <p>
                 Si quieres evitar venir en coche, puedes llegar en taxi o en el
                 servicio de bus que Flavia y Juancho reservaron. Si piensas usar
@@ -174,11 +161,16 @@ const Page = ({ data }) => {
               <p>Regreso:</p>
             </div>
 
-            <div className="flex justify-end md:w-1/2">
-              <img
-                className="md:-mt-24"
-                src={require("../images/flor transporte.png")}
-              />
+            <div className="flex flex-auto flex-col md:flex-row md:-mt-20">
+              <div className="order-2 md:order-1 w-2/3 md:w-3/12 -mt-32 mx-auto md:-mr-4 md:mt-0">
+                <img
+                  className="md:rotate-0 rotate-90"
+                  src={require("../images/flor transporte.png")}
+                />
+              </div>
+              <div className="order-1 md:order-2 md:w-1/2">
+                <Map lat={41.7402} lng={2.2686123} />
+              </div>
             </div>
           </div>
           <Divider flip />
@@ -200,7 +192,9 @@ const Page = ({ data }) => {
                 distance="2,4km"
                 url="http://www.lescasetesdelcongost.cat"
               >
-                {/* En el mismo pueblo donde se celebra la boda */}
+                <p className="-mt-6 mb-2 text-sm">
+                  En el mismo pueblo donde se celebra la boda
+                </p>
                 <img
                   className="pointer-events-none lg:-ml-16"
                   src={require("../images/casetes del congost.png")}
@@ -248,28 +242,29 @@ const Page = ({ data }) => {
           <Heading>Regalo de boda</Heading>
 
           <div className="flex flex-wrap lg:flex-no-wrap">
-            <p className="order-2 lg:order-1 lg:w-2/4">
-              Flavia y Juancho tienen la mayor parte de sus necesidades
-              satisfechas, por lo cual no necesitan ningún tipo de bienes
-              materiales. Además, están completamente aterrados ante la
-              perspectiva del calentamiento global, por lo cual piden que no se
-              les obsequie ningún tipo de artefacto, electrodoméstico y demás
-              objetos que suelen regalarse para estas ocasiones. Sin embargo,
-              disfrutan mucho viajando. Si quieres regalarles algo (lo cual no
-              es necesario, pues tu presencia ya les sirve como regalo), puedes
-              ayudarles con su viaje de novios:
-            </p>
+            <div className="lg:w-2/4">
+              <p>
+                Flavia y Juancho tienen la mayor parte de sus necesidades
+                satisfechas, por lo cual no necesitan ningún tipo de bienes
+                materiales. Además, están completamente aterrados ante la
+                perspectiva del calentamiento global, por lo cual piden que no
+                se les obsequie ningún tipo de artefacto, electrodoméstico y
+                demás objetos que suelen regalarse para estas ocasiones. Sin
+                embargo, disfrutan mucho viajando. Si quieres regalarles algo
+                (lo cual no es necesario, pues tu presencia ya les sirve como
+                regalo), puedes ayudarles con su viaje de novios:
+              </p>
+              <p className="font-medium">
+                <span className="numeric">ES12 3025 0001 1514 3360 1353</span>
+                <br />
+                Caixa d’Enginyers
+              </p>
+            </div>
             <img
-              className="z-0 flex order-1 h-32 lg:h-auto lg:w-2/4 -mt-32 mb-8 ml-auto"
+              className="lg:w-2/4 lg:-mt-32"
               src={require("../images/flors regalo de boda.png")}
             />
           </div>
-
-          <p className="font-medium">
-            <span className="numeric">ES12 3025 0001 1514 3360 1353</span>
-            <br />
-            Caixa d’Enginyers
-          </p>
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@ const Drawer = ({
       <Backdrop onClick={onClose} isOpen={isOpen} style={backdropSpring} />
       <animated.div
         className={classNames(
-          "fixed z-40 h-full w-screen sm:w-drawer",
+          "fixed z-40 h-full w-screen",
           {
             "left-0": position === "left",
             "right-0": position === "right",

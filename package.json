@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "autoprefixer": "^9.6.1",
-    "gatsby": "^2.15.15",
-    "gatsby-plugin-postcss": "^2.1.7",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "gatsby": "^2.15.28",
+    "gatsby-plugin-postcss": "^2.1.10",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
     "react-google-maps": "^9.4.5",
     "surge": "^0.21.3",
     "tailwindcss": "^1.1.2"

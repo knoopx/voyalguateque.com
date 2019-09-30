@@ -28,11 +28,6 @@ p {
   max-width: 1024px;
 }
 
-@screen md {
-  .container {
-  }
-}
-
 dl dd {
   @apply font-medium;
 }
@@ -45,4 +40,15 @@ dl dd {
 dl dt {
   @apply mr-2;
   clear: left;
+}
+
+
+@variants responsive {
+  .rotate-0 {
+    transform: rotate(0deg);
+  }
+
+  .rotate-90 {
+    transform: rotate(-90deg);
+  }
 }
