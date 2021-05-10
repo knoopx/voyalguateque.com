@@ -4,24 +4,23 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
     "serve": "gatsby serve",
-    "deploy": "yarn build && surge public/"
+    "clean": "gatsby clean"
   },
   "dependencies": {
-    "autoprefixer": "^9.6.1",
-    "gatsby": "^2.15.28",
-    "gatsby-plugin-postcss": "^2.1.10",
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
-    "react-google-maps": "^9.4.5",
-    "surge": "^0.21.3",
-    "tailwindcss": "^1.1.2"
-  },
-  "devDependencies": {
+    "autoprefixer": "^10.2.5",
     "classnames": "^2.2.6",
-    "react-icons": "^3.7.0",
-    "react-spring": "^8.0.27"
+    "gatsby": "^3.4.2",
+    "lodash": "^4.17.21",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-google-maps": "^9.4.5",
+    "react-icons": "^4.2.0",
+    "react-spring": "^9.1.2",
+    "tailwindcss": "^2.1.2"
   }
 }

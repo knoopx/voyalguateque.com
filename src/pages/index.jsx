@@ -11,17 +11,17 @@ const NavItem = (props) => (
 )
 
 const MenuItem = (props) => {
-  return <AnchorLink className="px-8 py-4 border-b text-center" {...props} />
+  return <AnchorLink className="px-8 py-4 text-center border-b" {...props} />
 }
 
 const Heading = (props) => (
-  <h1 className="z-10 mb-10 text-3xl font-bold font-serif" {...props} />
+  <h1 className="z-10 mb-10 font-serif font-bold text-3xl" {...props} />
 )
 
 const Accomodation = ({ title, distance, url, children }) => {
   return (
-    <a href={url} rel="nofollow" className="flex flex-col lg:w-1/2 p-4">
-      <h2 className="z-10 text-lg font-medium">
+    <a href={url} rel="nofollow" className="flex flex-col p-4 lg:w-1/2">
+      <h2 className="z-10 font-medium text-lg whitespace-nowrap">
         {title} <MdChevronRight className="inline-block" size="1.6em" />
       </h2>
       <h5 className="z-10 mb-8 text-gray-600">(a {distance})</h5>
@@ -36,8 +36,8 @@ const Divider = ({ flip = false }) => {
       className="block mx-auto my-16"
       src={
         flip
-          ? require("../images/fulleta esquerra.png")
-          : require("../images/fulleta dreta.png")
+          ? require("../images/fulleta-esquerra.png").default
+          : require("../images/fulleta-dreta.png").default
       }
     />
   )
@@ -67,14 +67,14 @@ const Page = ({ data }) => {
           Regalo de boda
         </MenuItem>
         <div className="p-8">
-          <img src={require("../../src/images/corona2.png")} />
+          <img src={require("../images/corona2.png").default} />
         </div>
       </Drawer>
       <Header>
         <div className="flex items-center">
           <a
             onClick={toggleMenu}
-            className="cursor-pointer z-10 lg:hidden mr-auto"
+            className="lg:hidden z-10 mr-auto cursor-pointer"
           >
             <MenuIcon size="2em" />
           </a>
@@ -84,7 +84,7 @@ const Page = ({ data }) => {
             <AnchorLink href="#main" className="mt-1 mx-5 py-2">
               <img
                 className="h-10"
-                src={require("../../src/images/logo.png")}
+                src={require("../images/logo.png").default}
               />
             </AnchorLink>
             <NavItem href="#accomodation">Alojamientos</NavItem>
@@ -93,10 +93,10 @@ const Page = ({ data }) => {
         </div>
       </Header>
 
-      <div id="main" className="pt-24 container">
+      <div id="main" className="container pt-24">
         <div className="flex flex-col items-center justify-center min-h-screen">
           <div className="mb-8">
-            <img src={require("../../src/images/corona.png")} />
+            <img src={require("../images/corona.png").default} />
           </div>
           <div className="md:w-7/12 leading-relaxed">
             <p>
@@ -135,15 +135,15 @@ const Page = ({ data }) => {
                 <dd>18h</dd>
               </dl>
             </div>
-            <div className="md:w-1/2 -mt-16 mb-8 lg:-mt-32 md:-mr-24">
-              <img src={require("../images/fotos localizacion.png")} />
+            <div className="-mt-16 mb-8 lg:-mt-32 md:-mr-24 md:w-1/2">
+              <img src={require("../images/fotos localizacion.png").default} />
             </div>
 
-            <div className="md:w-1/2 md:-mt-48">
+            <div className="md:-mt-48 md:w-1/2">
               <Map className="relative md:mb-8" lat={41.7402} lng={2.2686123} />
               <img
-                className="w-2/3 -mt-10 ml-auto md:-ml-16 md:-mt-16"
-                src={require("../images/flor google maps.png")}
+                className="-mt-10 ml-auto md:-ml-16 md:-mt-16 w-2/3"
+                src={require("../images/flor google maps.png").default}
               />
             </div>
           </div>
@@ -164,10 +164,10 @@ const Page = ({ data }) => {
             </div>
 
             <div className="flex flex-auto flex-col md:flex-row md:-mt-20">
-              <div className="order-2 md:order-1 w-2/3 md:w-3/12 -mt-32 mx-auto md:-mr-4 md:mt-0">
+              <div className="order-2 md:order-1 -mt-32 mx-auto md:-mr-4 md:mt-0 w-2/3 md:w-3/12">
                 <img
-                  className="md:rotate-0 rotate-90"
-                  src={require("../images/flor transporte.png")}
+                  className="rotate-90 md:rotate-0"
+                  src={require("../images/flor transporte.png").default}
                 />
               </div>
               <div className="order-1 md:order-2 md:w-1/2">
@@ -181,7 +181,7 @@ const Page = ({ data }) => {
         <div id="accomodation" className="min-h-screen">
           <Heading>Alojamientos</Heading>
           <div>
-            <p className="lg:w-2/3 mb-12">
+            <p className="mb-12 lg:w-2/3">
               El Folló se encuentra en un precioso espacio natural,
               concretamente en el Parque del Montseny. Si la mañana siguiente
               quieres despertarte en este maravilloso entorno, te recomendamos
@@ -198,8 +198,8 @@ const Page = ({ data }) => {
                   En el mismo pueblo donde se celebra la boda
                 </p>
                 <img
-                  className="pointer-events-none lg:-ml-16"
-                  src={require("../images/casetes del congost.png")}
+                  className="lg:-ml-16 pointer-events-none"
+                  src={require("../images/casetes del congost.png").default}
                 />
               </Accomodation>
 
@@ -209,8 +209,8 @@ const Page = ({ data }) => {
                 url="https://www.booking.com/hotel/es/hostal-l-39-esquella.es.html"
               >
                 <img
-                  className="pointer-events-none -mt-10"
-                  src={require("../images/hostal l'esquella.png")}
+                  className="-mt-10 pointer-events-none"
+                  src={require("../images/hostal l'esquella.png").default}
                 />
               </Accomodation>
 
@@ -221,7 +221,7 @@ const Page = ({ data }) => {
               >
                 <img
                   className="pointer-events-none"
-                  src={require("../images/sono apartamentos.png")}
+                  src={require("../images/sono apartamentos.png").default}
                 />
               </Accomodation>
 
@@ -231,8 +231,8 @@ const Page = ({ data }) => {
                 url="https://www.montanyahotel.com"
               >
                 <img
-                  className="pointer-events-none -mt-20"
-                  src={require("../images/montanyà hotel.png")}
+                  className="-mt-20 pointer-events-none"
+                  src={require("../images/montanyà hotel.png").default}
                 />
               </Accomodation>
             </div>
@@ -263,8 +263,8 @@ const Page = ({ data }) => {
               </p>
             </div>
             <img
-              className="lg:w-2/4 lg:-mt-32"
-              src={require("../images/flors regalo de boda.png")}
+              className="lg:-mt-32 lg:w-2/4"
+              src={require("../images/flors-regalo-de-boda.png").default}
             />
           </div>
         </div>
