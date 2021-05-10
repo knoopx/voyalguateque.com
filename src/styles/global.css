@@ -1,0 +1,54 @@
+@import "../fonts/adobe-caslon-pro-cufonfonts-webfont/style.css";
+@import "../fonts/avenir-next-lt-pro-cufonfonts-webfont/style.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 18px;
+}
+
+body {
+  @apply font-sans;
+  overflow-x: hidden;
+}
+
+p {
+  @apply mb-6;
+}
+
+.numeric {
+  font-feature-settings: "tnum", "zero";
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+.container {
+  @apply mx-auto px-4;
+  max-width: 1024px;
+}
+
+dl dd {
+  @apply font-medium;
+}
+
+dl dt,
+dl dd {
+  float: left;
+}
+
+dl dt {
+  @apply mr-2;
+  clear: left;
+}
+
+
+@variants responsive {
+  .rotate-0 {
+    transform: rotate(0deg);
+  }
+
+  .rotate-90 {
+    transform: rotate(-90deg);
+  }
+}

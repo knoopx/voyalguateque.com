@@ -1,0 +1,31 @@
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/cache@v2
+      with:
+        path: './yarn/cache'
+        key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
+
+    - name: prepare
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git fetch --no-tags --prune --depth=1 origin gh-pages
+        git worktree add public gh-pages
+        yarn
+
+    - name: build
+      run: |
+        rm -rf public/**/*
+        yarn build
+        cd public
+        git add -f .
+        git commit -m "$(date +%Y%m%d)"
+        git push
