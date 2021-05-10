@@ -101,20 +101,19 @@ const Page = ({ data }) => {
           <div className="md:w-7/12 leading-relaxed">
             <p>
               Será una celebración formal, pero no te esperes la gala de los
-              Oscar. Ven preparado para bailar, beber, parlotear mucho, conocer
-              gente de partes remotas del mundo y, sobre todo, comer como si no
-              hubiera mañana. También traete una{" "}
-              <span className="font-medium">chaqueta</span> para las horas de
-              noche, pues en estos lares suele refrescar cuando cae el sol.
+              Oscar. Ven preparado para bailar (pero no pegao’, porque nos
+              multan), beber, parlotear mucho, conocer a nuestros amigos y
+              familia (si no los conoces ya) y, sobre todo, papear como si no
+              hubiera mañana (en El Folló se come como los dioses). También
+              traete una chaqueta para cuando baje el sol; ten presente que
+              estaremos en la montaña, así que puede refrescar.
             </p>
             <p>
-              Para poder organizar este fiestón como se debe, te pedimos que{" "}
+              Para poder organizar este guatequito pandémico como se debe, te
+              pedimos que{" "}
               <span className="font-medium">
-                confirmes tu asistencia lo antes posible
+                confirmes tu asistencia antes del 15 de mayo.
               </span>
-              . También te agradecemos que nos avises si utilizarás el{" "}
-              <span className="font-medium">transporte</span> de buses que
-              Flavia y Juancho reservaron, o si vendrás en tu propio coche.
             </p>
           </div>
           <Divider flip />
@@ -130,7 +129,7 @@ const Page = ({ data }) => {
                 <dt>Dirección:</dt>
                 <dd>Masía El Folló 08593 Tagamanent, Barcelona</dd>
                 <dt>Fecha:</dt>
-                <dd>Viernes 29 de mayo de 2020</dd>
+                <dd>Viernes 04 de junio de 2021</dd>
                 <dt>Hora:</dt>
                 <dd>18h</dd>
               </dl>
@@ -155,15 +154,15 @@ const Page = ({ data }) => {
           <div className="flex flex-wrap">
             <div className="mb-8 md:pr-16">
               <p>
-                Si quieres evitar venir en coche, puedes llegar en taxi o en el
-                servicio de bus que Flavia y Juancho reservaron. Si piensas usar
-                este servicio de bus, necesitamos que lo confirmes.
+                En El Folló hay espacio para aparcar tu coche. Debido al COVID
+                no ofreceremos el servicio de bus, por lo que te recomendamos
+                venir en tu propio coche o unirte con algún familiar o amigo
+                para venir juntos (no dudes en avisarnos si necesitas ayuda en
+                este último punto).
               </p>
-              <p>Punto de recogida para la ida:</p>
-              <p>Regreso:</p>
             </div>
 
-            <div className="flex flex-auto flex-col md:flex-row md:-mt-20">
+            <div className="flex flex-auto flex-col md:flex-row">
               <div className="order-2 md:order-1 -mt-32 mx-auto md:-mr-4 md:mt-0 w-2/3 md:w-3/12">
                 <img
                   className="rotate-90 md:rotate-0"
