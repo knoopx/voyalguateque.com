@@ -100,13 +100,12 @@ const Page = ({ data }) => {
           </div>
           <div className="md:w-7/12 leading-relaxed">
             <p>
-              Será una celebración formal, pero no te esperes la gala de los
-              Oscar. Ven preparado para bailar (pero no pegao’, porque nos
-              multan), beber, parlotear mucho, conocer a nuestros amigos y
-              familia (si no los conoces ya) y, sobre todo, papear como si no
-              hubiera mañana (en El Folló se come como los dioses). También
-              traete una chaqueta para cuando baje el sol; ten presente que
-              estaremos en la montaña, así que puede refrescar.
+              Es oficial. Después de innumerables retrasos pandémicos, Flavia y
+              Juancho formalizarán su unión el 4 de junio de 2021 en las
+              hermosas montañas de Tagamanent, un pueblo encantador cerca de
+              Barcelona. Habían planeado un guateque de la hostia para 2020,
+              pero en cambio será una celebración íntima y sencilla, en lo que
+              esperan que sea un “guateque memorable en tiempos de Covid”.
             </p>
             <p>
               Para poder organizar este guatequito pandémico como se debe, te
@@ -131,17 +130,39 @@ const Page = ({ data }) => {
                 <dt>Fecha:</dt>
                 <dd>Viernes 04 de junio de 2021</dd>
                 <dt>Hora:</dt>
-                <dd>18h</dd>
+                <dd>13h</dd>
               </dl>
+
+              <p>
+                <span className="font-medium">
+                  Medidas de seguridad por Covid-19
+                </span>
+                : queremos que sea una celebración segura. Por ello te pedimos
+                amablemente que no olvides traer tu mascarilla y que realices un
+                Test de Antígenos el día antes de venir. Aquí puedes consultar
+                dónde hacerlo por 30€ en Madrid y Barcelona:
+                https://testcovid-unilabs.es/centros/. Próximamente se aprobará
+                la compra de este tipo de tests en farmacias, por lo cual os
+                recomendamos estar atentos a la información que nos pueda llegar
+                al respecto.
+              </p>
+              <p>
+                El Folló cumple con todas las medidas de seguridad y en las
+                bodas realizadas hasta ahora ha habido contagio cero, por lo que
+                sabemos que es un espacio seguro. Si el tiempo nos acompaña,
+                prevemos que toda la celebración se pueda realizar al aire libre
+                (incluida la comida), con lo cual minimizaremos el riesgo, a la
+                vez que disfrutamos de este maravilloso entorno.
+              </p>
             </div>
-            <div className="-mt-16 mb-8 lg:-mt-32 md:-mr-24 md:w-1/2">
+            <div className="mb-8 md:-mr-24 md:w-1/2">
               <img src={require("../images/fotos localizacion.png").default} />
             </div>
 
-            <div className="md:-mt-48 md:w-1/2">
+            <div className="md:w-1/2">
               <Map className="relative md:mb-8" lat={41.7402} lng={2.2686123} />
               <img
-                className="-mt-10 ml-auto md:-ml-16 md:-mt-16 w-2/3"
+                className="ml-auto md:-ml-16 w-2/3"
                 src={require("../images/flor google maps.png").default}
               />
             </div>
@@ -247,13 +268,13 @@ const Page = ({ data }) => {
               <p>
                 Flavia y Juancho tienen la mayor parte de sus necesidades
                 satisfechas, por lo cual no necesitan ningún tipo de bienes
-                materiales. Además, están completamente aterrados ante la
-                perspectiva del calentamiento global, por lo cual piden que no
-                se les obsequie ningún tipo de artefacto, electrodoméstico y
-                demás objetos que suelen regalarse para estas ocasiones. Sin
-                embargo, disfrutan mucho viajando. Si quieres regalarles algo
-                (lo cual no es necesario, pues tu presencia ya les sirve como
-                regalo), puedes ayudarles con su viaje de novios:
+                materiales. Sin embargo, han estado encerrados por mucho tiempo
+                y disfrutan mucho viajando. Si quieres regalarles algo (lo cual
+                no es necesario, pues tu presencia ya les sirve como regalo),
+                puedes ayudarles con su viaje de novios, que se asegurarán de
+                realizar siguiendo todas las medidas sanitarias pertinentes y en
+                concordancia con los lineamientos marcados por el Ministerio de
+                Sanidad del Reino de España:
               </p>
               <p className="font-medium">
                 <span className="numeric">ES12 3025 0001 1514 3360 1353</span>
